@@ -1,0 +1,27 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "CUDA C++: Launch",
+            "type": "cuda-gdb",
+            "request": "launch",
+            "program": "/opt/conda/envs/cpgnn/bin/python",
+            "cwd": "/cpgnn",
+            "args": "${workspaceFolder}/test.py",
+            "initCommands": [
+                "set environment CUDA_VISIBLE_DEVICES=0,1",
+                "set breakpoint pending on",
+                "break /cpgnn/src/op.cpp:15",
+                "file /opt/conda/envs/cpgnn/bin/python"
+            ]
+        },
+        {
+            "name": "CUDA C++: Attach",
+            "type": "cuda-gdb",
+            "request": "attach"
+        }
+    ]
+}
